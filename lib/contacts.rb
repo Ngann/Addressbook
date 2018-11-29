@@ -1,10 +1,10 @@
-class Contact
-  # attr accessor :address,
-  # attr reader :firstname, :lastname
+class Contacts
+  attr_accessor :phonenumber
+  attr_reader :firstname, :lastname
 
   @@address_book = []
 
-  def intialize
+  def initialize(firstname, lastname, phonenumber)
     @firstname = firstname
     @lastname = lastname
     @phonenumber = phonenumber
@@ -15,16 +15,20 @@ class Contact
     # @zipcode = zipcode
   end
 
-  def store_contact
-    #this is where we push the object to the addressbbok array
+  def save()
+    @@address_book.push(self)
+  end
+
+  def self.all()
+    @@address_book
+  end
+
+  def self.clear()
+    @@address_book = []
   end
 
   def update_contact
     #this where we can retreive the contact and make updates
-  end
-
-  def retrieve_contact
-    # get contact method
   end
 
 end

@@ -7,7 +7,13 @@ get('/') do
   erb(:input)
 end
 
-get('/output') do
-  binding.pry
+post ('/') do
+  # binding.pry
+  @firstname = params.fetch("new_first_name")
+  @lastname = params.fetch("new_last_name")
+  @phonenumber = params.fetch("new_phone_number")
+  new_contact = Contact.new()
+  new_contact.save()
+  @address_book = Contact.all()
   erb(:output)
-endgit
+end

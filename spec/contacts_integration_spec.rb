@@ -3,12 +3,13 @@ require('./app')
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 
-describe('the rectangle path', {:type => :feature}) do
-  it('processes the user entry and returns whether it is a square or not') do
-    visit('/')
-    fill_in('new-first-name', :with => '5')
-    fill_in('new-last-name', :with => '5')
-    click_button('Go!')
-    expect(page).to have_content('This is a square.')
-  end
-end
+
+# describe('the rectangle path', {:type => :feature}) do
+#   it('processes the user entry and returns whether it is a square or not') do
+#     visit('/')
+#     fill_in('new-first-name', :with => '5')
+#     fill_in('new-last-name', :with => '5')
+#     click_button('Go!')
+#     expect(page).to have_content('This is a square.')
+#   end
+# end
