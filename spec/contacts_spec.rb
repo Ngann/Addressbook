@@ -28,5 +28,26 @@ describe("Contacts") do
     end
   end
 
+  describe("#id") do
+    it("increments an id by 1 each time a new contact is added") do
+      contact = Contacts.new("Ngan","Nguyen","123-456-7890")
+      contact.save()
+      contact2 = Contacts.new("Bob","Nguyen","123-456-7890")
+      contact2.save()
+      expect(contact.id()).to(eq(1))
+      expect(contact2.id()).to(eq(2))
+    end
+  end
+
+  describe(".find") do
+    it("finds an contact based on its id") do
+      contact = Contacts.new("Ngan","Nguyen","123-456-7890")
+      contact.save()
+      contact2 = Contacts.new("Bob","Nguyen","123-456-7890")
+      contact2.save()
+      expect(Contacts.find(1)).to(eq(contact))
+      expect(Contacts.find(2)).to(eq(contact2))
+    end
+  end
 
 end
