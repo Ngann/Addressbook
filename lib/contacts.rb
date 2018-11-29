@@ -1,13 +1,13 @@
 class Contacts
   @@address_book = []
-  # attr_accessor :phonenumber
-  attr_reader :firstname, :lastname, :phonenumber, :id
+  attr_accessor :phonenumber
+  attr_reader :firstname, :lastname, :id
 
 
-  def initialize(firstname, lastname, phonenumber)
-    @firstname = firstname
-    @lastname = lastname
-    @phonenumber = phonenumber
+  def initialize(attributes)
+    @firstname = attributes[:firstname]
+    @lastname = attributes[:lastname]
+    @phonenumber = attributes[:phonenumber]
     # @email = email
     # @address = address
     # @city = city
@@ -36,7 +36,6 @@ class Contacts
       end
     end
   end
-
 
 end
 

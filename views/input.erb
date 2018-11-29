@@ -1,17 +1,27 @@
 <h2>Address Book</h2>
 
-<% @address_book.each do |contact| %>
-  <p><%= contact.name %></p>
-<% end %>
-
 <form action="/" method="post">
   <div class="form-group">
     <label for="new-first-name">First Name</label>
-    <input type="text" id="new_first_name" name="new_first_name">
+    <input type="text" id="new_first_name" name="firstname">
     <label for="new_last_name">Last Name</label>
-    <input type="text" id="new_last_name" name="new_last_name">
+    <input type="text" id="new_last_name" name="lastname">
     <label for="new_phone_number">Phone Number</label>
-    <input type="text" id="new_phone_number" name="new_phone_number">
+    <input type="text" id="new_phone_number" name="phonenumber">
   </div>
   <button type="submit" class="btn-success">Add!</button>
 </form>
+
+<div class="book">
+  <div class="row">
+    <div class="col-md-4">
+      <h4>Contact List</h4>
+      <%@address_book.each do |contact| %>
+        <h4><a href="/contacts/<%= contact.id %>"><%= contact.firstname %> <%= contact.lastname %></a></h4>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <h4>Contact Info</h4>
+    </div>
+  </div>
+</div>
